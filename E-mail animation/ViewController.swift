@@ -10,11 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var emeilTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
-
+    @IBAction func submit(_ sender: UIButton) {
+        if (emeilTextField.text?.isEmpty)! {
+            //self.emeilTextField.background
+            UITextField.animate(withDuration: 0.01, delay: 0, options: [.repeat, .autoreverse], animations: {
+                self.emeilTextField.transform = CGAffineTransform(rotationAngle: .pi/20)
+            }, completion: nil)
+        }
+    }
 }
 
